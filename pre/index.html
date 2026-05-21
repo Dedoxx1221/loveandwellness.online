@@ -4,7 +4,7 @@ window.addEventListener("popstate", function (t) {
     if (!t.state) return;
     setTimeout(function () {
         var back_redirect_back_link =
-            "" +
+            "#" +
             location.search +
             (typeof atomiGetVturbSrc === 'function' ? atomiGetVturbSrc() : "");
 
