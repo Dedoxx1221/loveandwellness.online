@@ -6,8 +6,18 @@
     "https://loveandwellness.online/lead3"
   ];
 
-  const destination = pages[Math.floor(Math.random() * pages.length)];
+  let index = localStorage.getItem("ab_index");
 
-  window.location.replace(destination + window.location.search + window.location.hash);
+  if (index === null) {
+    index = 0;
+  } else {
+    index = parseInt(index) + 1;
+  }
+
+  if (index >= pages.length) index = 0;
+
+  localStorage.setItem("ab_index", index);
+
+  window.location.replace(pages[index] + window.location.search + window.location.hash);
 })();
 </script>
