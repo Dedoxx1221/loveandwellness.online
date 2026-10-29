@@ -221,51 +221,7 @@
 <body>
 
 <!-- ─── UTM PROPAGATION para links do funil ─── -->
-<script>
-(function () {
-  var CHAVES = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-  var q = new URLSearchParams(location.search), utms = {};
-  CHAVES.forEach(function (k) {
-    var v = q.get(k);
-    if (v) { try { sessionStorage.setItem('ld_' + k, v); } catch (e) {} }
-    var s = v; try { s = v || sessionStorage.getItem('ld_' + k); } catch (e) {}
-    if (s) utms[k] = s;
-  });
-  var DESTINOS = /(digistore24|checkout-ds24|magneticdesire\.site|loveinstinct\.online)/i;
-  function carimbar() {
-    document.querySelectorAll('a[href]').forEach(function (a) {
-      if (!DESTINOS.test(a.href)) return;
-      var u = new URL(a.href, location.href);
-      Object.keys(utms).forEach(function (k) { u.searchParams.set(k, utms[k]); });
-      a.href = u.toString();
-    });
-  }
-  carimbar();
-  document.addEventListener('DOMContentLoaded', carimbar);
-  setTimeout(carimbar, 1500);
-})();
 
-(function(){
-  var D=/(digistore24|checkout-ds24|magneticdesire\.site|loveinstinct\.online)/i;
-  function ck(n){var m=document.cookie.match('(?:^|; )'+n+'=([^;]+)');return m?decodeURIComponent(m[1]):null;}
-  document.addEventListener('click',function(e){
-    var el=e.target;while(el&&el.tagName!=='A') el=el.parentElement;
-    if(!el||!el.href) return;
-    try{
-      var u=new URL(el.href,location.href);
-      if(!D.test(u.hostname)) return;
-      var fbc=ck('_fbc'),fbp=ck('_fbp');
-      if(!fbc){var fc=new URLSearchParams(location.search).get('fbclid');if(fc) fbc='fb.1.'+Date.now()+'.'+fc;}
-      if(fbc&&!u.searchParams.has('fbc')) u.searchParams.set('fbc',fbc);
-      if(fbp&&!u.searchParams.has('fbp')) u.searchParams.set('fbp',fbp);
-      var eid=window._eid||null;if(!eid){try{eid=localStorage.getItem('_eid');}catch(ev){}}
-      if(eid&&!u.searchParams.has('external_id')) u.searchParams.set('external_id',eid);
-      el.href=u.toString();
-      if(typeof fbq==='function') fbq('trackCustom','LandingCTAClick');
-    }catch(ev){}
-  },true);
-})();
-</script>
 
 <!-- ─── HEADLINE ─── -->
 <h2 class="headline-neon" lang="en-US" style="font-weight:400;text-transform:uppercase;text-align:center;color:#fff;margin:0 auto 1rem;padding:0 12px;line-height:1.25;max-width:34rem;font-size:clamp(14px,4vw,22px);hyphens:auto;overflow-wrap:break-word;">
@@ -295,7 +251,7 @@
     <!-- CTA TOPO -->
     <div style="text-align:center">
       <span class="btn-green-wrap">
-        <a href="https://go.centerpag.com/PPU38CQE76J" class="btn btn-green">Become a member</a>
+        <a href="https://go.centerpag.com/PPU38CQE749" class="btn btn-green">Become a member</a>
       </span>
     </div>
 
@@ -344,7 +300,7 @@
         Special price, available for a limited time.
       </p>
       <span class="btn-pink-wrap" style="display:inline-block;width:100%">
-        <a href="https://go.centerpag.com/PPU38CQE76J" class="btn btn-pink" style="width:100%">Become a member</a>
+        <a href="https://go.centerpag.com/PPU38CQE749" class="btn btn-pink" style="width:100%">Become a member</a>
       </span>
     </div>
 
@@ -384,7 +340,7 @@
     <!-- CTA MEIO -->
     <div style="text-align:center">
       <span class="btn-green-wrap">
-        <a href="https://go.centerpag.com/PPU38CQE76J" class="btn btn-green">Become a member</a>
+        <a href="https://go.centerpag.com/PPU38CQE749" class="btn btn-green">Become a member</a>
       </span>
     </div>
 
@@ -410,7 +366,7 @@
     <!-- CTA FINAL -->
     <div style="text-align:center;padding-bottom:1rem">
       <span class="btn-pink-wrap">
-        <a href="https://go.centerpag.com/PPU38CQE76J" class="btn btn-pink" style="display:inline-flex">Become a member</a>
+        <a href="https://go.centerpag.com/PPU38CQE749" class="btn btn-pink" style="display:inline-flex">Become a member</a>
       </span>
     </div>
 
@@ -450,10 +406,10 @@
 window.LT_HACK = {
   ON: true,
   AT_VIDEO_SECONDS: 1545,
-  DROP_PRICE: '$46.90',
-  DROP_PRICE_VALUE: 46.90,
+  DROP_PRICE: '$47.90',
+  DROP_PRICE_VALUE: 47.90,
   FULL_PRICE: '$67',
-  DROP_CHECKOUT_URL: 'https://www.checkout-ds24.com/product/687041?voucher=30OFF&custom=30OFF&aff=REGMarketing&cam=msg',
+  DROP_CHECKOUT_URL: 'https://go.centerpag.com/PPU38CQE76J',
   BADGE: '30% OFF'
 };
 
